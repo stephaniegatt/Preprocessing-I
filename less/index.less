@@ -20,7 +20,7 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
+	font-size: 62.5%;
 	font: inherit;
 	vertical-align: baseline;
 }
@@ -33,7 +33,7 @@ body {
 	line-height: 1;
 }
 ol, ul {
-	list-style: none;
+	list-style: circle;
 }
 blockquote, q {
 	quotes: none;
@@ -54,6 +54,164 @@ table {
 }
 
 html, body {
-    height: 100%;
+    // height: 100%;
 }
 
+
+
+//begin variables
+
+@main-color: #C18C5D;
+@secondary-color: #495867;
+@third-color: #ECC8AF;
+@fourth-color: #CE796B;
+@main-font: 'Amatic SC', cursive;
+@secondary-font: 'Inconsolata', monospace;
+
+//begin mixins
+
+.center() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.h1() {
+	font-size: 6rem;
+	color: @secondary-color;
+	font-family: @main-font;
+}
+
+.h2() {
+	font-size: 2rem;
+	color: @secondary-color;
+	font-family: @main-font;
+}
+
+.h3() {
+	font-size: 3.5rem;
+	color: @secondary-color;
+	font-family: @main-font;
+}
+
+.h4() {
+	font-size: 1.5rem;
+	color: @secondary-color;
+	font-family: @secondary-font;
+	font-weight: bold;
+}
+
+.p() {
+	font-size: 1rem;
+	color: @secondary-color;
+	font-family: @secondary-font;
+}
+
+.a() {
+	font-family: @secondary-font;
+	color: @fourth-color;
+	text-decoration: none;
+}
+
+//begin header-container format
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+.main-container {
+	width: 60%;
+	margin: 0 5%;
+}
+
+.header-container {
+	// width: 60%;
+	// margin: 1rem;
+	padding: 5rem 0;
+	background-color: @main-color;
+	flex-direction: column;
+	.center();
+
+	nav {
+		background-color: yellow;
+		a {
+			.a();
+		}
+	}
+
+	h1 {
+		.h1();
+		@media(max-width: 500px {
+			font-size: 4rem;
+		} //this closes my max width 500px
+	}//this closes my h1
+	h2 {
+		.h2();
+	}
+}
+
+.body-header {
+	// width: 60%;
+	// margin: 1rem;
+	padding: 1rem 0;
+	h3 {
+		.h3();
+		background-color: @main-color;
+		.center();
+	}
+
+	ul {
+		font-family: @secondary-font;
+		width: 70%;
+		margin: 2rem;
+		padding: 2rem 0;
+	}
+}
+
+.job-container {
+	padding: 2rem 0;
+	display: flex;
+	justify-content: space-between;
+	h4 {
+		.h4();
+	}
+	p {
+		.p();
+	}
+}
+
+.sidebar-container {
+	width: 30%;
+	padding: 5rem 0;
+	background-color: @third-color;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+
+	img {
+		border-radius: 50%;
+		width: 50%;
+	  }
+
+	h2 {
+		padding: 3rem 0;
+		.h2();
+	}
+		
+	h4 {
+		padding: 3rem 0;
+		.h4();
+	}
+
+	p {
+		.p();
+	}
+
+	ul {
+		padding: 3rem 0;
+		font-family: @secondary-font;
+		width: 80%;
+	}
+}
