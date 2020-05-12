@@ -134,22 +134,54 @@ body {
   display: flex;
   justify-content: center;
 }
+@media (max-width: 500px) {
+  body {
+    flex-direction: column;
+  }
+}
 .main-container {
   width: 60%;
   margin: 0 5%;
 }
+@media (max-width: 500px) {
+  .main-container {
+    width: 100%;
+    margin: 0;
+  }
+}
 .header-container {
-  padding: 5rem 0;
+  padding: 5rem 0 0;
   background-color: #C18C5D;
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.header-container nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 5rem 0 2rem;
+}
+.header-container nav a {
+  font-family: 'Inconsolata', monospace;
+  color: #a53860;
+  text-decoration: none;
+  font-weight: bold;
+}
+.header-container nav a:hover {
+  color: #495867;
+}
 .header-container h1 {
   font-size: 6rem;
   color: #495867;
   font-family: 'Amatic SC', cursive;
+  text-align: center;
+}
+@media (max-width: 500px) {
+  .header-container h1 {
+    font-size: 4rem;
+  }
 }
 .header-container h2 {
   font-size: 2rem;
@@ -158,6 +190,11 @@ body {
 }
 .body-header {
   padding: 1rem 0;
+}
+@media (max-width: 500px) {
+  .body-header {
+    margin: 5%;
+  }
 }
 .body-header h3 {
   font-size: 3.5rem;
@@ -170,9 +207,14 @@ body {
 }
 .body-header ul {
   font-family: 'Inconsolata', monospace;
+  color: #495867;
   width: 70%;
-  margin: 2rem;
-  padding: 2rem 0;
+  margin: 2% 5%;
+}
+@media (max-width: 500px) {
+  .body-header ul {
+    margin: 10%;
+  }
 }
 .job-container {
   padding: 2rem 0;
@@ -199,6 +241,12 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 500px) {
+  .sidebar-container {
+    width: 100%;
+    margin: 0;
+  }
+}
 .sidebar-container img {
   border-radius: 50%;
   width: 50%;
@@ -222,7 +270,7 @@ body {
   font-family: 'Inconsolata', monospace;
 }
 .sidebar-container ul {
-  padding: 3rem 0;
   font-family: 'Inconsolata', monospace;
-  width: 80%;
+  color: #495867;
+  width: 70%;
 }

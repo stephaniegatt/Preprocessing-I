@@ -53,9 +53,9 @@ table {
     box-sizing: border-box;
 }
 
-html, body {
-    // height: 100%;
-}
+// html, body {
+//     // height: 100%;
+// }
 
 
 
@@ -64,7 +64,7 @@ html, body {
 @main-color: #C18C5D;
 @secondary-color: #495867;
 @third-color: #ECC8AF;
-@fourth-color: #CE796B;
+@fourth-color: #a53860;
 @main-font: 'Amatic SC', cursive;
 @secondary-font: 'Inconsolata', monospace;
 
@@ -111,6 +111,7 @@ html, body {
 	font-family: @secondary-font;
 	color: @fourth-color;
 	text-decoration: none;
+	font-weight: bold;
 }
 
 //begin header-container format
@@ -118,31 +119,45 @@ html, body {
 body {
 	display: flex;
 	justify-content: center;
+	@media(max-width: 500px) {
+		flex-direction: column;
+	}
 }
 
 .main-container {
 	width: 60%;
 	margin: 0 5%;
+	@media(max-width: 500px) {
+		width: 100%;
+		margin: 0;
+	}
 }
 
 .header-container {
 	// width: 60%;
 	// margin: 1rem;
-	padding: 5rem 0;
+	padding: 5rem 0 0;
 	background-color: @main-color;
 	flex-direction: column;
 	.center();
 
 	nav {
-		background-color: yellow;
+		width: 100%;
+		display: flex;
+		justify-content: space-around;
+		padding: 5rem 0 2rem;
 		a {
 			.a();
-		}
-	}
+			&:hover {
+				color: @secondary-color;
+			} //closes hover and .a
+		} //closes a
+	} //closes nav
 
 	h1 {
 		.h1();
-		@media(max-width: 500px {
+		text-align: center;
+		@media(max-width: 500px) {
 			font-size: 4rem;
 		} //this closes my max width 500px
 	}//this closes my h1
@@ -155,6 +170,9 @@ body {
 	// width: 60%;
 	// margin: 1rem;
 	padding: 1rem 0;
+	@media(max-width: 500px) {
+		margin: 5%;
+	}
 	h3 {
 		.h3();
 		background-color: @main-color;
@@ -163,9 +181,13 @@ body {
 
 	ul {
 		font-family: @secondary-font;
+		color: @secondary-color;
 		width: 70%;
-		margin: 2rem;
-		padding: 2rem 0;
+		margin: 2% 5%;
+		// padding: ;
+		@media(max-width: 500px) {
+			margin: 10%;
+		}
 	}
 }
 
@@ -189,11 +211,17 @@ body {
 	flex-direction: column;
 	justify-content: space-between;
 	align-items: center;
+	@media(max-width: 500px) {
+		width: 100%;
+		margin: 0;
+	}
 
 	img {
 		border-radius: 50%;
 		width: 50%;
-	  }
+		// @media(max-width: 500px) {
+		// 	width: %;
+		} // closes media
 
 	h2 {
 		padding: 3rem 0;
@@ -210,8 +238,10 @@ body {
 	}
 
 	ul {
-		padding: 3rem 0;
+		// padding: 3rem 0;
+		// margin: 2% 8%;
 		font-family: @secondary-font;
-		width: 80%;
+		color: @secondary-color;
+		width: 70%;
 	}
 }
